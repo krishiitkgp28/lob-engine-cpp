@@ -1,13 +1,14 @@
 #ifndef LOB_ENGINE_H
 #define LOB_ENGINE_H
 
-#include "./order.h"
+#include "order.h"
 
-class LimitOrderBook {
-    public:
-        void addOrder(const Order& order);
+class LimitOrderBook
+{
+public:
+    void addOrder(const Order &order);
 
-        void cancelOrder(int id);
+    void cancelOrder(int id);
 };
 
 #endif

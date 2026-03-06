@@ -1,9 +1,10 @@
-#include "../src/lob_engine.cpp"
+#include "../include/lob_engine.h"
 
-int main () {
-    LimitOrderBook book ;
+int main()
+{
+    LimitOrderBook book;
 
-    Order order1{ 1 , Buy , 100.5 , 10 };
+    Order order1{1, BUY, 100.5, 10};
 
     book.addOrder(order1);
 

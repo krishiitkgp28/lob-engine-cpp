@@ -1,16 +1,18 @@
 #ifndef ORDER_H
 #define ORDER_H
 
-enum Side {
-    Buy,
-    Sell
+enum Side
+{
+    BUY,
+    SELL
 };
 
-struct Order {
+struct Order
+{
     int id;
     Side side;
     double price;
     int quantity;
 };
 
-#endif 
+#endif

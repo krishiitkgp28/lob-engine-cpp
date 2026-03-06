@@ -1,18 +1,30 @@
-# C++ Limit Order Book Engine
+# Limit Order Book Architecture
 
-A simple price-time priority limit order book implemented in C++.
-
-Project goals:
-- Understand market microstructure
-- Build low-latency trading infrastructure
-- Practice systems-level C++
-
-Architecture:
+Core Components:
 
 Order
-↓
-LimitOrderBook
-↓
-Matching Engine
-↓
+Represents an incoming order with price, quantity, side, and id.
+
 Trade
+Represents an executed match between a buy and sell order.
+
+OrderBook
+Maintains price levels for bids and asks.
+
+MatchingEngine
+Matches incoming orders using price-time priority.
+
+LimitOrderBook
+High-level API used by trading systems to interact with the order book.
+
+Flow:
+
+Incoming Order
+     ↓
+LimitOrderBook::addOrder
+     ↓
+MatchingEngine
+     ↓
+Trade Generated
+     ↓
+OrderBook Updated
