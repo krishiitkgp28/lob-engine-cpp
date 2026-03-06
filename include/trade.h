@@ -1,5 +1,4 @@
-#ifndef TRADE_H
-#define TRADE_H
+#pragma once
 
 #include <iostream>
 #include <stdexcept>
@@ -20,7 +19,7 @@ struct Trade
 
     void print() const
     {
-        std::cout << "Order["
+        std::cout << "Trade["
                   << "buy=" << buy_order_id
                   << ", sell=" << sell_order_id
                   << ", price=" << price
@@ -29,5 +28,3 @@ struct Trade
                   << "]\n";
     }
 };
-
-#endif

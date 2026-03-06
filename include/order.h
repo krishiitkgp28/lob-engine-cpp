@@ -6,8 +6,8 @@
 
 enum class Side
 {
-    BUY,
-    SELL
+    Buy,
+    Sell
 };
 
 struct Order
@@ -29,14 +29,14 @@ struct Order
 
     bool isBuy() const
     {
-        return side == Side ::BUY;
+        return side == Side::Buy;
     }
 
     void print() const
     {
         std::cout << "Order["
                   << "id=" << id
-                  << ", side=" << (side == Side::BUY ? "BUY" : "SELL")
+                  << ", side=" << (side == Side::Buy ? "Buy" : "Sell")
                   << ", price=" << price
                   << ", quantity=" << quantity
                   << ", timestamp=" << timestamp

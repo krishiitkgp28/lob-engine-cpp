@@ -5,8 +5,8 @@ int main()
 {
     LimitOrderBook book;
 
-    Order order1{1, Side::BUY, 100.5, 10, 1001};
-    Order order2{2, Side::SELL, 100.5, 10, 1002};
+    Order order1{1, Side::Buy, 100.5, 10, 1001};
+    Order order2{2, Side::Sell, 100.5, 10, 1002};
 
     order1.print();
     order2.print();
