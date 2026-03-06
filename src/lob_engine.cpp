@@ -4,6 +4,7 @@
 void LimitOrderBook::addOrder(const Order &order)
 {
     std::cout << "Adding order id : " << order.id << "\n";
+    order.print();
 }
 
 void LimitOrderBook::cancelOrder(int id)
