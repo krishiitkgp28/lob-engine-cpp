@@ -1,47 +1,45 @@
+#include "../include/order_book.h"
 #include <iostream>
-#include <functional>
-#include <map>
 
-class OrderBook
+void OrderBook::addBid(double price, int qty)
 {
-private:
-    std::map<double, int, std::greater<double>> bids;
-    std::map<double, int> asks;
+    bids[price] += qty;
+}
 
-public:
-    void addBid(double price, int qty)
+void OrderBook::addAsk(double price, int qty)
+{
+    asks[price] += qty;
+}
+
+double OrderBook::bestBid()
+{
+    if (bids.empty())
+        return 0;
+
+    return bids.begin()->first;
+}
+
+double OrderBook::bestAsk()
+{
+    if (asks.empty())
+        return 0;
+
+    return asks.begin()->first;
+}
+
+void OrderBook::printBook()
+{
+    std::cout << "\nBIDS\n";
+
+    for (auto &b : bids)
     {
-        bids[price] += qty;
+        std::cout << b.first << " : " << b.second << "\n";
     }
-    void addAsk(double price, int qty)
+
+    std::cout << "\nASKS\n";
+
+    for (auto &a : asks)
     {
-        asks[price] += qty;
+        std::cout << a.first << " : " << a.second << "\n";
     }
-
-    double bestBid()
-    {
-        if (bids.empty())
-            return 0;
-
-        return bids.begin() -> first;
-    }
-    double bestAsk()
-    {
-        if (asks.empty())
-            return 0;
-
-        return asks.begin()->first;
-    }
-
-    void printBook(){
-        std::cout << "\nBIDS:\n";
-        for ( auto &b : bids ){
-            std::cout << b.first << " : " << b.second << "\n";
-        }
-
-        std::cout << "\nASKS:\n";
-        for ( auto &a : asks ){
-            std::cout << a.first << " : " << a.second << "\n";
-        }
-    };
-};
+}
