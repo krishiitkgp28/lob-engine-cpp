@@ -1,5 +1,5 @@
-#ifndef ORDER_H
-#define ORDER_H
+#ifndef ORDER_H // INSTEAD WE CAN USE #pragma once
+#define ORDER_H 
 
 #include <iostream>
 #include <stdexcept>

@@ -1,5 +1,4 @@
-#ifndef LOB_ENGINE_H
-#define LOB_ENGINE_H
+#pragma once
 
 #include "order.h"
 
@@ -11,4 +10,4 @@ public:
     void cancelOrder(int id);
 };
 
-#endif
+#
