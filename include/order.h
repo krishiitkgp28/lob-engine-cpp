@@ -14,7 +14,7 @@ struct Order
 {
     int id;
     Side side;
-    double price;
+    int price;
     int quantity;
     long timestamp;
 

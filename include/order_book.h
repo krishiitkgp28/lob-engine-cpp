@@ -1,24 +1,35 @@
 #pragma once
 
-#include <map>
-#include <functional>
+#include <array>
+#include <deque>
+#include "order.h"
+
+const int MAX_LEVELS = 10000;
 
 class OrderBook
 {
 private:
 
-    std::map<double, int, std::greater<double>> bids;
-    std::map<double, int> asks;
+    int base_price = 100;
+
+    std::array<std::deque<Order>, MAX_LEVELS> bids;
+    std::array<std::deque<Order>, MAX_LEVELS> asks;
 
 public:
 
-    void addBid(double price, int qty);
+    int priceToIndex(int price) const;
 
-    void addAsk(double price, int qty);
+    int indexToPrice(int index) const;
 
-    double bestBid();
+    void addOrder(const Order& order);
 
-    double bestAsk();
+    void matchOrders();
+
+    void cancelOrder(int id);
 
     void printBook();
+
+    int bestBidIndex();
+
+    int bestAskIndex();
 };
