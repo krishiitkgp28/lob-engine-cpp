@@ -29,3 +29,11 @@ Price-Time Priority
 Higher price buy orders execute first.
 Lower price sell orders execute first.
 If prices are equal, earlier timestamp wins.
+
+Price Ladder
+
+The order book uses a fixed price ladder indexed by price:
+
+index = price - base_price
+
+Each price level stores a FIFO queue of orders.

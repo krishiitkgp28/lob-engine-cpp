@@ -1,0 +1,2 @@
+[22:49:24] STRAT=PairsTrade BUY AAPL price=101 qty=100
+[22:49:24] STRAT=PairsTrade BUY AAPL price=101 qty=20

@@ -18,7 +18,7 @@ struct Order
     int quantity;
     long timestamp;
 
-    Order(int id, Side side, double price, int quantity, long timestamp) : id(id), side(side), price(price), quantity(quantity), timestamp(timestamp)
+    Order(int id, Side side, int price, int quantity, long timestamp) : id(id), side(side), price(price), quantity(quantity), timestamp(timestamp)
     {
         if (quantity <= 0)
             throw std::invalid_argument("Quantity must be positive.");

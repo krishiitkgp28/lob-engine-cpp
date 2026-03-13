@@ -1,19 +1,22 @@
 #include "../include/order_book.h"
 #include "../include/order.h"
+#include "../include/matching_engine.h"
 
 int main()
 {
     OrderBook book;
 
-    Order o1(1, Side::Buy, 101, 10, 1);
-    Order o2(2, Side::Buy, 102, 5, 2);
-    Order o3(3, Side::Sell, 101, 8, 3);
+    Order o1(1, Side::Sell, 101, 100, 1);
+    Order o2(2, Side::Sell, 101, 50, 2);
+    Order o3(3, Side::Buy, 101, 120, 3);
 
-    book.addOrder(o1);
-    book.addOrder(o2);
-    book.addOrder(o3);
+    MatchingEngine engine(book);
 
-    book.matchOrders();
+    engine.processOrder(o1);
+    engine.processOrder(o2);
+    engine.processOrder(o3);
+    
+    book.cancelOrder(2);
 
     book.printBook();
 }
